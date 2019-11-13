@@ -26,7 +26,7 @@ const PageDashboard = ({ routes }) => {
                     textAlign: 'center',
                     borderBottom: 'solid #e8e8e8 1px',
                 }}>
-                    <h3> Registrasi Bimtek Online App </h3>
+                    <h3> ROBITEMPE </h3>
                 </div>
                 <MenuComponent />
             </Sider>

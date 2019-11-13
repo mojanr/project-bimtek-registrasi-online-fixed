@@ -5,7 +5,13 @@ const { Footer } = Layout;
 const LandingFooterComponent = () => {
     return (
         <React.Fragment>
-            <Footer style={{ textAlign: 'center', fontWeight: "bold" }}> BIRO PENGADAAN BARANG/JASA | SEKRETARIAT DAERAH PROVINSI JAWABARAT | 2019</Footer>
+            <Footer style={{ textAlign: 'center', fontWeight: "bold" }}>
+                {/* BIRO PENGADAAN BARANG/JASA | SEKRETARIAT DAERAH PROVINSI JAWABARAT | 2019 */}
+                (ROBITEMPE)
+                <br />
+                REGISTRASI <i> ONLINE </i> BIMBINGAN TEKNIS SISTEM PENGADAAN SECARA ELEKTRONIK PENYEDIA DAN INSTANSI DI PROVINSI JAWA BARAT
+                {/* <br /> */}
+            </Footer>
         </React.Fragment>
     )
 }

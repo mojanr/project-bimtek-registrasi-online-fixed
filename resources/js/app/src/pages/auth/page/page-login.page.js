@@ -1,6 +1,7 @@
 import React from 'react'
 import Styled from 'styled-components'
 import FormLoginComponent from '../component/form-login.component'
+import LandingFooterComponent from '../../../commons/component/landing-footer/landing-footer.component'
 
 const LoginHeader = Styled.div`
     text-align: center;
@@ -40,13 +41,14 @@ const PageLogin = () => {
                 </div>
                 <FormLoginComponent />
             </LoginForm>
-            <LoginFooter>
+            {/* <LoginFooter>
                 BIRO PENGADAAN BARANG/JASA
                 <br />
                 SEKRETARIAT DAERAH PROVINSI JAWABARAT 
                 <br /> 
                 2019
-            </LoginFooter>
+            </LoginFooter> */}
+            <LandingFooterComponent />
         </React.Fragment>
     )
 }
