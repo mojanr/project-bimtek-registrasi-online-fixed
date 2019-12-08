@@ -29,8 +29,8 @@ const FormRegistrasiInstansiComponent = () => {
 
   const initalValues = {
     nama_instansi: '',
-    satuan_kerja: '',
-    unit_kerja: '',
+    satuan_kerja: '-',
+    unit_kerja: '-',
     alamat_instansi: '',
     provinsi: '',
     kab_kota: '',
@@ -100,14 +100,14 @@ const FormRegistrasiInstansiComponent = () => {
         <Row gutter={16}>
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
             <FieldTextComponent
-              label="Nama Instansi"
+              label="Nama Asosiasi"
               name="nama_instansi"
               value={formik.values.nama_instansi}
               onChange={formik.handleChange}
               error={formik.errors.nama_instansi}
               required
             />
-            <Row gutter={16}>
+            {/* <Row gutter={16}>
               <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                 <FieldTextComponent
                   label="Satuan Kerja"
@@ -128,9 +128,9 @@ const FormRegistrasiInstansiComponent = () => {
                   required
                 />
               </Col>
-            </Row>
+            </Row> */}
             <FieldTextComponent
-              label="Alamat Instansi"
+              label="Alamat Asosiasi"
               name="alamat_instansi"
               value={formik.values.alamat_instansi}
               onChange={formik.handleChange}
@@ -228,7 +228,7 @@ const FormRegistrasiInstansiComponent = () => {
               required
             />
             <FieldTextComponent
-              label="Nama Tempat Pelatihan"
+              label="Tempat Pelatihan"
               name="tempat_pelatihan"
               value={formik.values.tempat_pelatihan}
               onChange={formik.handleChange}

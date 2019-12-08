@@ -19,20 +19,20 @@ const TableListRegistrasiInstansiComponent = () => {
 
     const columns = [
         {
-            title: 'Nama Instansi',
+            title: 'Nama Asosiasi',
             dataIndex: 'nama_instansi',
             key: 'nama_instansi',
         },
-        {
-            title: 'Satuan Kerja',
-            dataIndex: 'satuan_kerja',
-            key: 'satuan_kerja',
-        },
-        {
-            title: 'Unit Kerja',
-            dataIndex: 'unit_kerja',
-            key: 'unit_kerja',
-        },
+        // {
+        //     title: 'Satuan Kerja',
+        //     dataIndex: 'satuan_kerja',
+        //     key: 'satuan_kerja',
+        // },
+        // {
+        //     title: 'Unit Kerja',
+        //     dataIndex: 'unit_kerja',
+        //     key: 'unit_kerja',
+        // },
         {
             title: 'Jenis Pelatihan',
             dataIndex: 'jenis_pelatihan',

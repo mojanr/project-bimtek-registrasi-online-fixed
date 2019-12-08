@@ -234,7 +234,7 @@ const FormRegistrasiInstansiComponent = () => {
             />
 
             <FieldTextComponent
-              label="Nama Tempat Pelatihan"
+              label="Tempat Pelatihan"
               name="tempat_pelatihan"
               value={formik.values.tempat_pelatihan}
               onChange={formik.handleChange}

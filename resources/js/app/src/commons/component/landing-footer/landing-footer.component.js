@@ -11,6 +11,10 @@ const LandingFooterComponent = () => {
                 <br />
                 REGISTRASI <i> ONLINE </i> BIMBINGAN TEKNIS SISTEM PENGADAAN SECARA ELEKTRONIK PENYEDIA DAN INSTANSI DI PROVINSI JAWA BARAT
                 {/* <br /> */}
+                <br />
+                V1.0.0
+                {process.env.APP_VERSION}
+
             </Footer>
         </React.Fragment>
     )

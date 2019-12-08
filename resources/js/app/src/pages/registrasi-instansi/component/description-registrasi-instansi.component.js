@@ -14,7 +14,7 @@ const DescriptionRegistrasiInstansiComponent = ({ data }) => {
             <Descriptions.Item label="No Telepon" span={1}> {data.no_telepon} </Descriptions.Item>
             <Descriptions.Item label="No Handphone" span={1}> {data.no_handphone} </Descriptions.Item>
             <Descriptions.Item label="Jenis Pelatihan" span={1}> {data.jenis_pelatihan} </Descriptions.Item>
-            <Descriptions.Item label="Nama Tempat Pelatihan" span={1}> {data.tempat_pelatihan} </Descriptions.Item>
+            <Descriptions.Item label="Tempat Pelatihan" span={1}> {data.tempat_pelatihan} </Descriptions.Item>
             <Descriptions.Item label="Alamat Tempat Pelatihan" span={1}> {data.alamat_tempat_pelatihan} </Descriptions.Item>
             <Descriptions.Item label="Surat Permohonan" span={1}> 
                 <a 
