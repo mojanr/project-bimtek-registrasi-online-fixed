@@ -26,7 +26,7 @@ class RegistrasiInstansiController extends Controller
         try {
             // return $request->nama_instansi;
             // return $request->file('surat_permohonan')->store('public/surat-permohonan');
-            
+            // return $request->jenis_pelatihan;
             $registrasiInstansi = new RegistrasiInstansi;
             $registrasiInstansi->nama_instansi = strtoupper($request->nama_instansi);
             $registrasiInstansi->satuan_kerja = $request->satuan_kerja;
@@ -41,10 +41,11 @@ class RegistrasiInstansiController extends Controller
             $registrasiInstansi->jenis_pelatihan = $request->jenis_pelatihan;
             $registrasiInstansi->tempat_pelatihan = $request->tempat_pelatihan;
             $registrasiInstansi->alamat_tempat_pelatihan = $request->alamat_tempat_pelatihan;
-            $registrasiInstansi->surat_permohonan = $request->file('surat_permohonan')->store('public/surat-permohonan');
+            $registrasiInstansi->surat_permohonan = $request->file('surat_permohonan')->store('public/surat-permohonan/registrasi/instansi');
             $registrasiInstansi->status = 101;
             $result = $registrasiInstansi->save();
             return $this->response("Success", "Create Success", $result);
+            // return $this->response("Success", "Create Success", $request->);
         } catch (\Exception $e) {
             return $this->response("Error", "Create Error", $e->getMessage());
         }

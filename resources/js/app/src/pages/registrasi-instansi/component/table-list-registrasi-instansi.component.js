@@ -44,7 +44,7 @@ const TableListRegistrasiInstansiComponent = () => {
             render: (item) => (
                 <Button 
                     type="link"
-                    href={`${document.querySelector('meta[name="base-url"]').getAttribute('content')}/preview/surat-permohonan/${item.id}`}
+                    href={`${document.querySelector('meta[name="base-url"]').getAttribute('content')}/preview/surat-permohonan/registrasi/instansi/${item.id}`}
                     target="_blank"
                 > 
                     Surat Permohonan

@@ -4,6 +4,8 @@ import AuthStore from './auth.store';
 import RegistrasiPenyediaStore from './registrasi-penyedia.store';
 import RegistrasiInstansiStore from './registrasi-instansi.store';
 import BlockImageSliderStore from './block-image-slider.store';
+import RegistrasiAdosiasiStore from './registrasi-adosiasi.store';
+import JenisPelatihanStore from './jenis-pelatihan.store';
 
 class StoreModule {
 
@@ -11,7 +13,7 @@ class StoreModule {
         // Api module
         this.api = axios.create({
             baseURL: `${document.querySelector('meta[name="base-url"]').getAttribute('content')}/api`,
-            timeout: 1000,
+            timeout: 10000,
         });
 
         // Add a request interceptor
@@ -39,7 +41,9 @@ class StoreModule {
         this.authStore = new AuthStore(this)
         this.registrasiPenyediaStore = new RegistrasiPenyediaStore(this)
         this.registrasiInstansiStore = new RegistrasiInstansiStore(this)
+        this.registrasiAdosiasiStore = new RegistrasiAdosiasiStore(this)
         this.blockImageSliderStore = new BlockImageSliderStore(this)
+        this.jenisPelatihanStore = new JenisPelatihanStore(this)
     }
 
 }

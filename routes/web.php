@@ -18,9 +18,12 @@ Route::get('/', function () {
 // EXPORT
 Route::get('/export/registrasi/penyedia', 'RegistrasiPenyediaController@export');
 Route::get('/export/registrasi/instansi', 'RegistrasiInstansiController@export');
+Route::get('/export/registrasi/adosiasi', 'RegistrasiAdosiasiController@export');
 
-// SURAT PERMOHONAN
-Route::get('/preview/surat-permohonan/{id}', 'RegistrasiInstansiController@previewSuratPermohonan');
+// SURAT PERMOHONAN INSTANSI
+Route::get('/preview/surat-permohonan/registrasi/instansi/{id}', 'RegistrasiInstansiController@previewSuratPermohonan');
+// SURAT PERMOHONAN ADOSIASI
+Route::get('/preview/surat-permohonan/registrasi/adosiasi/{id}', 'RegistrasiAdosiasiController@previewSuratPermohonan');
 
 // Auth::routes();
 

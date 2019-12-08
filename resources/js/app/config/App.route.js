@@ -16,6 +16,9 @@ import PageListRegistrasiPenyedia from '../src/pages/registrasi-penyedia/page/pa
 // import PageEditPengumuman from '../src/pages/pengumuman/page/page-edit-pengumuman.page'
 // import PageViewPengumuman from '../src/pages/pengumuman/page/page-view-pengumuman.page'
 import PageBlockListHomeImageSlider from '../src/pages/block/page/page-block-list-home-image-slider.page'
+import PageListRegistrasiAdosiasi from '../src/pages/registrasi-adosiasi/page/page-list-registrasi-adosiasi.page'
+import PageRegistrasiAdosiasi from '../src/pages/registrasi-adosiasi/page/page-registrasi-adosiasi.page'
+import PageListJenisPelatihan from '../src/pages/jenis-pelatihan/page/page-list-jenis-pelatihan.page'
 
 
 export const Routes = [
@@ -35,6 +38,12 @@ export const Routes = [
     path: '/registrasi/instansi',
     exact: true,
     component: PageRegistrasiInstansi,
+    routes: []
+  },
+  {
+    path: '/registrasi/adosiasi',
+    exact: true,
+    component: PageRegistrasiAdosiasi,
     routes: []
   },
   {
@@ -73,6 +82,12 @@ export const Routes = [
         routes: []
       },
       {
+        path: '/dashboard/registrasi/adosiasi',
+        exact: true,
+        component: PageListRegistrasiAdosiasi,
+        routes: []
+      },
+      {
         path: '/dashboard/registrasi/penyedia',
         exact: true,
         component: PageListRegistrasiPenyedia,
@@ -102,6 +117,13 @@ export const Routes = [
       //   component: PageEditPengumuman,
       //   routes: []
       // },
+      // JENIS PELATIHAN ROUTES
+      {
+        path: '/dashboard/jenis-pelatihan',
+        exact: true,
+        component: PageListJenisPelatihan,
+        routes: []
+      },
       // BLOCK CONTENT PAGES ROUTES
       {
         path: '/dashboard/block/home-image-slider',

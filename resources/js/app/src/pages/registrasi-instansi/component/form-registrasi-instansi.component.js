@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useFormik } from 'formik';
 import {
   Row,
@@ -10,12 +10,18 @@ import { observer } from 'mobx-react-lite'
 import { useStore } from '../../../commons/store/_store.module'
 import FieldTextComponent from '../../../commons/component/field/field-text.component';
 import FieldTextAreaComponent from '../../../commons/component/field/field-text-area.component';
-import FieldRadioComponent from '../../../commons/component/field/field-radio.component';
+// import FieldRadioComponent from '../../../commons/component/field/field-radio.component';
 import FieldUploadComponent from '../../../commons/component/field/field-upload.component';
+import FieldSelectComponent from '../../../commons/component/field/field-select.component';
 
 const FormRegistrasiInstansiComponent = () => {
 
   const store = useStore()
+
+  useEffect(() => {
+    store.jenisPelatihanStore.fetchActiveData()
+    return () => { };
+  }, [])
 
   const initalValues = {
     nama_instansi: '',
@@ -28,7 +34,7 @@ const FormRegistrasiInstansiComponent = () => {
     email: '',
     no_telepon: '',
     no_handphone: '',
-    jenis_pelatihan: '',
+    jenis_pelatihan: [],
     tempat_pelatihan: '',
     alamat_tempat_pelatihan: '',
     surat_permohonan: '',
@@ -47,7 +53,7 @@ const FormRegistrasiInstansiComponent = () => {
       email: yup.string().required().email(),
       no_telepon: yup.number().required(),
       no_handphone: yup.number().required(),
-      jenis_pelatihan: yup.string().required(),
+      jenis_pelatihan: yup.array().required(),
       tempat_pelatihan: yup.string().required(),
       alamat_tempat_pelatihan: yup.string().required(),
       surat_permohonan: yup.object().required(),
@@ -62,11 +68,13 @@ const FormRegistrasiInstansiComponent = () => {
 
       // CONVERT FORM VALUE OBJECT INTO FORM DATA
       const formData = new FormData();
-      for ( var key in data ) {
+      for (var key in data) {
         formData.append(key, data[key]);
       }
 
-      // SEND DATA TO SERVER
+      console.log(formData)
+
+      // // SEND DATA TO SERVER
       const result = await store.registrasiInstansiStore.register(formData)
       if (result) { actions.resetForm() }
     },
@@ -176,7 +184,7 @@ const FormRegistrasiInstansiComponent = () => {
               error={formik.errors.no_handphone}
               required
             />
-            <FieldRadioComponent
+            {/* <FieldRadioComponent
               label="Jenis Pelatihan"
               name="jenis_pelatihan"
               value={formik.values.jenis_pelatihan}
@@ -189,7 +197,24 @@ const FormRegistrasiInstansiComponent = () => {
                 { value: 'TEPRA', text: 'TEPRA' },
               ]}
               required
+            /> */}
+
+            <FieldSelectComponent
+              label="Jenis Pelatihan"
+              name="jenis_pelatihan"
+              value={formik.values.jenis_pelatihan}
+              onChange={formik.setFieldValue}
+              error={formik.errors.jenis_pelatihan}
+              options={store.jenisPelatihanStore.getData}
+              // options={[
+              //   { id: 1 ,value: 'SIRUP', text: 'SIRUP' },
+              //   { id: 2, value: 'SPSE 4.3', text: 'SPSE 4.3' },
+              //   { id: 3, value: 'e-Purchasing', text: 'e-Purchasing' },
+              //   { id: 4, value: 'TEPRA', text: 'TEPRA' },
+              // ]}
+              required
             />
+
             <FieldTextComponent
               label="Nama Tempat Pelatihan"
               name="tempat_pelatihan"
@@ -212,7 +237,7 @@ const FormRegistrasiInstansiComponent = () => {
               value={formik.values.surat_permohonan}
               onChange={formik.setFieldValue}
               error={formik.errors.surat_permohonan}
-              fielType=".pdf"
+              fileType=".pdf"
               required
             />
 

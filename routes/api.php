@@ -29,6 +29,11 @@ Route::get('/registrasi/instansi', 'RegistrasiInstansiController@getAll');
 Route::get('/registrasi/instansi/export', 'RegistrasiInstansiController@export');
 Route::post('/registrasi/instansi', 'RegistrasiInstansiController@create');
 
+// ROUTES REGISTRASI ADOSIASI
+Route::get('/registrasi/adosiasi', 'RegistrasiAdosiasiController@getAll');
+Route::get('/registrasi/adosiasi/export', 'RegistrasiAdosiasiController@export');
+Route::post('/registrasi/adosiasi', 'RegistrasiAdosiasiController@create');
+
 
 // ROUTES IMAGE SLIDER
 Route::get('/block/slider', 'BlockHomeImageSliderController@getAll');
@@ -37,3 +42,14 @@ Route::post('/block/slider', 'BlockHomeImageSliderController@create');
 Route::put('/block/slider/add/{id}', 'BlockHomeImageSliderController@addToSlider');
 Route::put('/block/slider/remove/{id}', 'BlockHomeImageSliderController@removeFromSlider');
 Route::delete('/block/slider/{id}', 'BlockHomeImageSliderController@deleteImage');
+
+
+// ROUTES JENIS PELATIHAN
+Route::get('/jenis-pelatihan', 'JenisPelatihanController@getAll');
+Route::get('/jenis-pelatihan/status/active', 'JenisPelatihanController@getAllActiveData');
+Route::get('/jenis-pelatihan/{id}', 'JenisPelatihanController@getDataById');
+Route::post('/jenis-pelatihan', 'JenisPelatihanController@create');
+Route::put('/jenis-pelatihan/{id}', 'JenisPelatihanController@update');
+Route::put('/jenis-pelatihan/{id}/activate', 'JenisPelatihanController@activate');
+Route::put('/jenis-pelatihan/{id}/inactivate', 'JenisPelatihanController@inactivate');
+// Route::delete('/block/slider/{id}', 'BlockHomeImageSliderController@deleteImage');
