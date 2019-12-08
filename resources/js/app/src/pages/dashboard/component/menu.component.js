@@ -1,6 +1,8 @@
 import React from 'react'
 import { Menu, Icon } from 'antd';
 import { useHistory } from 'react-router-dom'
+import { observer } from 'mobx-react-lite'
+import { useStore } from '../../../commons/store/_store.module';
 
 const { SubMenu } = Menu;
 
@@ -10,8 +12,14 @@ const MenuComponent = () => {
     console.log('rerender menu')
 
     const history = useHistory();
+    const store = useStore()
 
     const changeMenu = (path) => {
+        history.push(path)
+    }
+
+    const logout = (path) => {
+        store.authStore.removeToken()
         history.push(path)
     }
 
@@ -29,7 +37,7 @@ const MenuComponent = () => {
                 >
                     <Menu.Item key="sub11" onClick={() => changeMenu('/dashboard/registrasi/instansi')}> Instansi/Satker/Unit Kerja</Menu.Item>
                     <Menu.Item key="sub12" onClick={() => changeMenu('/dashboard/registrasi/penyedia')}> Penyedia </Menu.Item>
-                    <Menu.Item key="sub13" onClick={() => changeMenu('/dashboard/registrasi/adosiasi')}> Adosiasi </Menu.Item>
+                    <Menu.Item key="sub13" onClick={() => changeMenu('/dashboard/registrasi/asosiasi')}> Asosiasi </Menu.Item>
                 </SubMenu>
                 {/* <Menu.Item key="3" onClick={() => changeMenu('/dashboard/pengumuman')}>
                     <span className="nav-text">Pengumuman</span>
@@ -61,7 +69,7 @@ const MenuComponent = () => {
                 <Menu.Item key="6" onClick={() => changeMenu('/dashboard/permission')}>
                     <span className="nav-text">Permission</span>
                 </Menu.Item> */}
-                <Menu.Item key="7" onClick={() => changeMenu('/auth/login')}>
+                <Menu.Item key="7" onClick={() => logout('/auth/login')}>
                     <span className="nav-text">Logout</span>
                 </Menu.Item>
             </Menu>
@@ -69,4 +77,4 @@ const MenuComponent = () => {
     )
 }
 
-export default React.memo(MenuComponent)
+export default React.memo(observer(MenuComponent))

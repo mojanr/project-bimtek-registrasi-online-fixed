@@ -76,7 +76,7 @@ const LandingNavbarComponent = ({ defaultKey = '1' }) => {
                 >
                     <Menu.Item key="12" onClick={() => changeUrl('/registrasi/instansi')}>INSTANSI/SATKER/UNIT KERJA</Menu.Item>
                     <Menu.Item key="13" onClick={() => changeUrl('/registrasi/penyedia')}>PENYEDIA</Menu.Item>
-                    <Menu.Item key="14" onClick={() => changeUrl('/registrasi/adosiasi')}>ADOSIASI</Menu.Item>
+                    <Menu.Item key="14" onClick={() => changeUrl('/registrasi/asosiasi')}>ASOSIASI</Menu.Item>
                 </SubMenu>
                 {/* <Menu.Item key="4"> REGISTRASI </Menu.Item> */}
                 {/* <Menu.Item key="4" onClick={() => changeUrl('/pengumuman')}> PENGUMUMAN </Menu.Item> */}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Icon, Input, Button } from 'antd';
+import { Form, Icon, Input, Button, notification } from 'antd';
 import { useStore } from '../../../commons/store/_store.module'
 import { useHistory } from 'react-router-dom'
 
@@ -11,12 +11,20 @@ const MyForm = (props) => {
 
 
     const login = async (data) => {
-        // const result = await store.authStore.login(data)
+        const result = await store.authStore.login(data)
         // console.log(result)
-        // if (result) {
-        //     history.push('/dashboard')
-        // }
-        history.push('/dashboard')
+        if (result.data.status == 'Success') {
+            
+            store.authStore.setToken(result.data.data.token)
+            // console.log('islogn',store.authStore.islogin())
+            history.push('/dashboard/registrasi/instansi')
+        } else {
+            notification.error({
+                message: 'Failed',
+                description: 'Login Failed'
+            })
+        }
+        // history.push('/dashboard')
     }
 
     const handleSubmit = e => {

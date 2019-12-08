@@ -8,8 +8,8 @@ const { Content } = Layout;
 
 const routes = [
     {
-        path: '/dashboard/registrasi/adosiasi',
-        breadcrumbName: 'List Registrasi Adosiasi',
+        path: '/dashboard/registrasi/asosiasi',
+        breadcrumbName: 'List Registrasi Asosiasi',
     },
 ];
 
@@ -27,7 +27,7 @@ const PageListRegistrasiAdosiasi = () => {
                 style={{
                     border: '1px solid rgb(235, 237, 240)',
                 }}
-                title="List Registrasi Adosiasi"
+                title="List Registrasi Asosiasi"
                 breadcrumb={{ routes }}
             />
             <Content style={{ margin: '24px 25px 0', overflow: 'initial' }}>

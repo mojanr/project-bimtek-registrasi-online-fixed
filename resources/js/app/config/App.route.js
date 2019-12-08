@@ -19,36 +19,49 @@ import PageBlockListHomeImageSlider from '../src/pages/block/page/page-block-lis
 import PageListRegistrasiAdosiasi from '../src/pages/registrasi-adosiasi/page/page-list-registrasi-adosiasi.page'
 import PageRegistrasiAdosiasi from '../src/pages/registrasi-adosiasi/page/page-registrasi-adosiasi.page'
 import PageListJenisPelatihan from '../src/pages/jenis-pelatihan/page/page-list-jenis-pelatihan.page'
+import PageRegister from '../src/pages/auth/page/page-register.page'
 
 
 export const Routes = [
   {
     path: '/auth/login',
     exact: true,
+    guard: false,
     component: PageLogin,
+    routes: []
+  },
+  {
+    path: '/auth/register',
+    exact: true,
+    guard: false,
+    component: PageRegister,
     routes: []
   },
   {
     path: '/',
     exact: true,
+    guard: false,
     component: PageHome,
     routes: []
   },
   {
     path: '/registrasi/instansi',
     exact: true,
+    guard: false,
     component: PageRegistrasiInstansi,
     routes: []
   },
   {
-    path: '/registrasi/adosiasi',
+    path: '/registrasi/asosiasi',
     exact: true,
+    guard: false,
     component: PageRegistrasiAdosiasi,
     routes: []
   },
   {
     path: '/registrasi/penyedia',
     exact: true,
+    guard: false,
     component: PageRegistrasiPenyedia,
     routes: []
   },
@@ -67,29 +80,34 @@ export const Routes = [
   {
     path: '/kontak',
     exact: true,
+    guard: false,
     component: PageKontak,
     routes: []
   },
   {
     path: '/dashboard',
     exact: false,
+    guard: true,
     component: PageDashboard,
     routes: [
       {
         path: '/dashboard/registrasi/instansi',
         exact: true,
+        guard: true,
         component: PageListRegistrasiInstansi,
         routes: []
       },
       {
-        path: '/dashboard/registrasi/adosiasi',
+        path: '/dashboard/registrasi/asosiasi',
         exact: true,
+        guard: true,
         component: PageListRegistrasiAdosiasi,
         routes: []
       },
       {
         path: '/dashboard/registrasi/penyedia',
         exact: true,
+        guard: true,
         component: PageListRegistrasiPenyedia,
         routes: []
       },
@@ -121,6 +139,7 @@ export const Routes = [
       {
         path: '/dashboard/jenis-pelatihan',
         exact: true,
+        guard: true,
         component: PageListJenisPelatihan,
         routes: []
       },
@@ -128,6 +147,7 @@ export const Routes = [
       {
         path: '/dashboard/block/home-image-slider',
         exact: true,
+        guard: true,
         component: PageBlockListHomeImageSlider,
         routes: []
       },
@@ -136,6 +156,7 @@ export const Routes = [
       {
         path: '/dashboard/user',
         exact: true,
+        guard: true,
         component: PageListUser,
         routes: []
       },

@@ -17,6 +17,10 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
+// ROUTES AUTH
+Route::post('/auth/register', 'AuthController@register');
+Route::post('/auth/login', 'AuthController@login');
+
 
 // ROUTES REGISTRASI PENYEDIA
 Route::get('/registrasi/penyedia', 'RegistrasiPenyediaController@getAll');

@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik';
 import {
   Row,
   Col,
   Button,
+  Select
 } from 'antd';
 import * as yup from 'yup'
 import { observer } from 'mobx-react-lite'
@@ -14,9 +15,13 @@ import FieldTextAreaComponent from '../../../commons/component/field/field-text-
 import FieldUploadComponent from '../../../commons/component/field/field-upload.component';
 import FieldSelectComponent from '../../../commons/component/field/field-select.component';
 
+
+const { Option } = Select
+
 const FormRegistrasiInstansiComponent = () => {
 
   const store = useStore()
+  const [teleponAddon, setTeleponAddon] = useState('(022)')
 
   useEffect(() => {
     store.jenisPelatihanStore.fetchActiveData()
@@ -61,7 +66,7 @@ const FormRegistrasiInstansiComponent = () => {
     onSubmit: async (values, actions) => {
       const data = {
         ...values,
-        no_telepon: `(022) - ${values.no_telepon}`,
+        no_telepon: `${teleponAddon} - ${values.no_telepon}`,
         no_handphone: `(+62)${values.no_handphone}`,
       }
       console.log(data)
@@ -79,6 +84,18 @@ const FormRegistrasiInstansiComponent = () => {
       if (result) { actions.resetForm() }
     },
   });
+
+
+  const selectBefore = (
+      <Select defaultValue={teleponAddon} style={{ width: 90 }}
+        onChange={(value) => {
+          setTeleponAddon(value)
+        }}
+      >
+        <Option value="(022)">(022)</Option>
+        <Option value="(021)">(021)</Option>
+      </Select>
+  )
 
   return (
     <React.Fragment>
@@ -168,7 +185,8 @@ const FormRegistrasiInstansiComponent = () => {
             />
             <FieldTextComponent
               label="No Telepon"
-              addonBefore="(022)"
+              // addonBefore="(022)"
+              addonBefore={selectBefore}
               name="no_telepon"
               value={formik.values.no_telepon}
               onChange={formik.handleChange}

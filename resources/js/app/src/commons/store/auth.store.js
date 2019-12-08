@@ -6,6 +6,11 @@ export default class AuthStore {
         this.api = this.store.api
     }
 
+    // REGISTER
+    async register(data) {
+        return await this.api.post('/auth/register', data)
+    }
+
     // LOGIN WITH USERNAME AND PASSWORD
     async login(data) {
         return await this.api.post('/auth/login', data)
@@ -34,6 +39,17 @@ export default class AuthStore {
     // REMOVE TOKEN FROM LOCALSTORAGE
     removeToken() {
         window.localStorage.removeItem('token')
+    }
+
+    // IS LOGGED ID
+    islogin() {
+        if (this.getToken()) {
+            // console.log('tokennya', this.getToken())
+            return true
+        } else {
+            // console.log('tokennya falseee', this.getToken())
+            return false
+        }
     }
     
 }

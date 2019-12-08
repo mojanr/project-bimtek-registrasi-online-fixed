@@ -12,10 +12,10 @@ const PageRegistrasiAdosiasi = () => {
             <LandingNavbarComponent defaultKey="2" />
             <Content style={{ padding: '10px 50px', background: 'white' }}>
                 <div style={{ fontSize: '32pt', fontWeight: '400', padding: '10px 0 20px 0', textAlign: 'left' }}>
-                    REGISTRASI ADOSIASI
+                    REGISTRASI ASOSIASI
                 </div>
 
-               <FormRegistrasiInstansiComponent />
+            <FormRegistrasiInstansiComponent />
             </Content>
             <LandingFooterComponent />
         </Layout>
