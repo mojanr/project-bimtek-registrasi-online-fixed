@@ -20,7 +20,7 @@ const { Option } = Select
 const FormRegistrasiInstansiComponent = () => {
 
   const store = useStore()
-  const [teleponAddon, setTeleponAddon] = useState('(022)')
+  const [teleponAddon, setTeleponAddon] = useState('')
 
   useEffect(() => {
     store.jenisPelatihanStore.fetchActiveData()
@@ -182,7 +182,7 @@ const FormRegistrasiInstansiComponent = () => {
             />
             <FieldTextComponent
               label="No Telepon"
-              addonBefore={selectBefore}
+              // addonBefore={selectBefore}
               name="no_telepon"
               value={formik.values.no_telepon}
               onChange={formik.handleChange}
