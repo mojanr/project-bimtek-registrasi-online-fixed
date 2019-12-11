@@ -121,7 +121,7 @@ const FormRegistrasiPenyediaComponent = () => {
     onSubmit: async (values, actions) => {
       const data = {
         ...values,
-        no_telepon: ${values.no_telepon},
+        no_telepon: values.no_telepon,
         no_handphone: `(+62)${values.no_handphone}`,
       }
       const result = await store.registrasiPenyediaStore.register(data)
