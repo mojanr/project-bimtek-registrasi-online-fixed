@@ -121,7 +121,7 @@ const FormRegistrasiPenyediaComponent = () => {
     onSubmit: async (values, actions) => {
       const data = {
         ...values,
-        no_telepon: `(022) - ${values.no_telepon}`,
+        no_telepon: ${values.no_telepon},
         no_handphone: `(+62)${values.no_handphone}`,
       }
       const result = await store.registrasiPenyediaStore.register(data)
@@ -161,7 +161,7 @@ const FormRegistrasiPenyediaComponent = () => {
             />
             <FieldTextComponent
               label="No Telepon"
-              addonBefore="(022)"
+              // addonBefore="(022)"
               name="no_telepon"
               value={formik.values.no_telepon}
               onChange={formik.handleChange}
